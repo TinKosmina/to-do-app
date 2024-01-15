@@ -1,0 +1,133 @@
+@import '../variables';
+
+ul {
+    margin-right: 40px;
+    li {
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 8px;
+        list-style-type: none;
+        background: $white;
+        color: $darker-black;
+        font-weight: 300;
+        font-size: 13px;
+        transition: 0.2s;
+        border-radius: 3px;
+        border: 1px solid #efefef;
+        margin-bottom: 10px;
+
+        box-shadow:
+            0px 0.3px 0.9px rgba(0, 0, 0, 0.1),
+            0px 1.6px 3.6px rgba(0, 0, 0, 0.1);
+
+        /* make the list items unselectable */
+        user-select: none;
+
+        &.overdue {
+            background: #fff1f1;
+            color: $darker-black;
+            border: #fff1f1;
+        }
+
+        &.checked {
+            //background: #EFF1F7;
+            color: $light-gray;
+            padding: 12px 8px 12px 35px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                border-color: $light-gray;
+                border-style: solid;
+                border-width: 0 2px 2px 0;
+                top: 21px;
+                left: 17px;
+                transform: rotate(45deg);
+                height: 12px;
+                width: 5px;
+            }
+
+            .task {
+                text-decoration: line-through;
+            }
+        }
+
+        .task {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            padding-top: 10px;
+
+            &.material-symbols-outlined {
+                margin-bottom: 0px;
+                margin-top: 0px;
+                font-size: 20px;
+                padding: 19px 10px 19px 19px;
+            }
+        }
+
+        .date {
+            font-size: 10px;
+            margin-top: 5px;
+            color: #757575;
+        }
+
+        .category {
+            font-size: 10px;
+            margin-top: 5px;
+            color: #757575;
+            border: 1px solid;
+            padding: 2px 4px 2px 4px;
+            border-radius: 10px;
+            margin-left: 5px;
+
+            &.personal {
+                color: #03dac5;
+            }
+
+            &.work {
+                color: #bc86fc;
+            }
+
+            &.home-improvement {
+                color: #f64740;
+            }
+
+            &.education {
+                color: #0041a1;
+            }
+
+            &.shopping {
+                color: #e1badd;
+            }
+
+            &.health-and-wellness {
+                color: #3700b3;
+            }
+
+            &.financial {
+                color: #cfc7b9;
+            }
+
+            &.social {
+                color: #9aadc7;
+            }
+
+            &.travel {
+                color: #a8eff0;
+            }
+
+            &.miscellaneous {
+                color: #b7c8a6;
+            }
+        }
+    }
+}
